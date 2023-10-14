@@ -68,4 +68,4 @@ jobs:
             sudo docker stop ${{ env.docker-container-name }}
             sudo docker rmi ${{ env.docker-image-name }}
             sudo docker pull ${{ env.docker-image-name }}
-            sudo docker run -d --rm --name ${{ env.docker-container-name }} -p 8080:8080 ${{ env.docker-image-name }}
+            sudo docker run -d --rm --name ${{ env.docker-container-name }} -v monitoring_data-volume:/pinpoint-agent --net monitoring_pinpoint -p 8080:8080 ${{ env.docker-image-name }}
