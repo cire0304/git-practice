@@ -64,6 +64,7 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
+          port: 22
           script: |
             sudo docker stop ${{ env.docker-container-name }}
             sudo docker rmi ${{ env.docker-image-name }}
